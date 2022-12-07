@@ -7,7 +7,7 @@
   "main": "index.js",
   "license": "Other",
   "dependencies": {
-    "@santi100/assertion-lib": "^1.0.2"
+    "@santi100/assertion-lib": "^1.0.3"
   },
   "type": "module"
 }
