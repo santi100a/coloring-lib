@@ -14,7 +14,7 @@ const COLORS = {
 }
 
 function coloring(string, color) {
-    assertType(color, 'string'); assert(typeof color === 'string' || Array.isArray(color), {
+    assert(typeof color === 'string' || Array.isArray(color), {
         expected: true,
         actual: typeof color === 'string' || Array.isArray(color),
         operator: 'Array.isArray()'
