@@ -1,13 +1,13 @@
 {
   "name": "@santi100/coloring-lib",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "url": "https://github.com/santi100a/coloring-lib"
   },
   "main": "index.js",
   "license": "Other",
   "dependencies": {
-    "@santi100/assertion-lib": "^1.0.1"
+    "@santi100/assertion-lib": "^1.0.2"
   },
   "type": "module"
 }

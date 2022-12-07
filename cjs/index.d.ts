@@ -1,22 +1,14 @@
 declare type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue'  | 'magenta' | 'cyan' | 'white' | 'bold';
+declare type Effect = 'bold' | 'blink' | 'conceal';
+declare type Parameter = Color | Effect;
 
 /**
  * 
  * @param string The string to paint in color! 
  * @param color The color to paint the string in.
  */
-declare function coloring(string: string, color: Color): string;
-/* declare namespace Coloring {
-    export const black: () => string;
-    export const red: () => string;
-    export const green: () => string;
-    export const yellow: () => string;
-    export const blue: () => string;
-    export const magenta: () => string;
-    export const cyan: () => string;
-    export const white: () => string;
-    export const bold: () => string;
-} */
+declare function coloring(string: string, color: Parameter): string;
+
 declare class Coloring {
     black(text: string): Coloring;
     red(text: string): Coloring;

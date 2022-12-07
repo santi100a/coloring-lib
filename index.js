@@ -14,7 +14,11 @@ const COLORS = {
 }
 
 function coloring(string, color) {
-    assertType(color, 'string'); assert(Array.isArray(color));
+    assertType(color, 'string'); assert(Array.isArray(color), {
+        expected: true,
+        actual: Array.isArray(color),
+        operator: 'Array.isArray()'
+    });
     if (typeof color === 'string')
         return `${COLORS[color.toLowerCase()]}${string}\x1b[0m`;
     else {

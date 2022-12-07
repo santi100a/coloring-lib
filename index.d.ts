@@ -1,6 +1,8 @@
 declare type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue'  | 'magenta' | 'cyan' | 'white' | 
 'bold' | 'blink' | 'conceal';
 declare type Effect = 'bold' | 'blink' | 'conceal';
+declare type Parameter = Color | Effect;
+declare type ParameterArray = Parameter[];
 
 /**
  * 
@@ -13,7 +15,7 @@ declare function coloring(string: string, color: Color): string;
  * @param string The string to paint in color! 
  * @param color The colors to paint the string in.
  */
-declare function coloring(string: string, color: [Color, ...Effect]): string;
+declare function coloring(string: string, color: ParameterArray): string;
 
 declare class Coloring {
     black(text: string): Coloring;
@@ -29,5 +31,5 @@ declare class Coloring {
     conceal(text: string): Coloring;
     resolve(): string;
 }
-export { coloring, Coloring, type Color, type Effect };
+export { coloring, Coloring, type Color, type Effect, type Parameter, type ParameterArray };
 export default coloring;
