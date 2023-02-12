@@ -1,4 +1,3 @@
-// @ts-check
 /// <reference path="index.d.ts" />
 const COLORS = {
     black: "\x1b[30m",
@@ -17,7 +16,7 @@ function coloring(string, color) {
     return `${COLORS?.[color.toLowerCase()]}${string}\x1b[0m`;
 }
 class Coloring {
-    __colors__ = ''
+    __colors__ = '';
     black(text) {
         this.__colors__ = `${this.__colors__}${COLORS.black}${text}`;
         return this;
@@ -67,4 +66,6 @@ class Coloring {
     }
 }
 
-module.exports = { coloring, Coloring };
+module.exports = coloring;
+exports.coloring = coloring;
+exports.Coloring = Coloring;
