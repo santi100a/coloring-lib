@@ -1,12 +1,5 @@
 {
-  "name": "@santi100/coloring-lib",
-  "version": "1.0.5",
-  "repository": {
-    "url": "https://github.com/santi100a/coloring-lib"
-  },
-  "main": "index.cjs",
-  "license": "MIT",
-  "dependencies": {
-    "@santi100/assertion-lib": "^1.0.3"
-  }
+  "main": "index.js",
+  "type": "commonjs",
+  "license": "MIT"
 }

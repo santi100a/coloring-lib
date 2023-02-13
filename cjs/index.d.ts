@@ -1,35 +1,106 @@
-declare type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue'  | 'magenta' | 'cyan' | 'white' | 
-'bold' | 'blink' | 'conceal';
-declare type Effect = 'bold' | 'blink' | 'conceal';
-declare type Parameter = Color | Effect;
-declare type ParameterArray = Parameter[];
-
+type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'bold' | 'blink' | 'conceal';
+type Effect = 'bold' | 'blink' | 'conceal';
+type Parameter = Color | Effect;
+type ParameterArray = Parameter[];
 /**
- * 
- * @param string The string to paint in color! 
- * @param color The color to paint the string in.
- */
-declare function coloring(string: string, color: Color): string;
-/**
- * 
- * @param string The string to paint in color! 
+ * Color `string` with color(s) `color`.
+ *
+ * @param string The string to paint in color!
  * @param color The colors to paint the string in.
  */
-declare function coloring(string: string, color: ParameterArray): string;
-
+declare function coloring(str: string, color: ParameterArray | Parameter): string;
+/**
+ * @class This is a coloring class.
+ */
 declare class Coloring {
-    black(text: string): Coloring;
-    red(text: string): Coloring;
-    green(text: string): Coloring;
-    yellow(text: string): Coloring;
-    blue(text: string): Coloring;
-    magenta(text: string): Coloring;
-    cyan(text: string): Coloring;
-    white(text: string): Coloring;
-    bold(text: string): Coloring;
-    blink(text: string): Coloring;
-    conceal(text: string): Coloring;
+    private _colors;
+    /**
+     * Paints `text` in black.
+     *
+     * @param text The text to paint in black.
+     * @returns `this` object for chaining.
+     */
+    black(text: string): this;
+    /**
+     * Paints `text` in red.
+     *
+     * @param text The text to paint in red.
+     * @returns `this` object for chaining.
+     */
+    red(text: string): this;
+    /**
+     * Paints `text` in green.
+     *
+     * @param text The text to paint in green.
+     * @returns `this` object for chaining.
+     */
+    green(text: string): this;
+    /**
+     * Paints `text` in yellow.
+     *
+     * @param text The text to paint in yellow.
+     * @returns `this` object for chaining.
+     */
+    yellow(text: string): this;
+    /**
+     * Paints `text` in blue.
+     *
+     * @param text The text to paint in blue.
+     * @returns `this` object for chaining.
+     */
+    blue(text: string): this;
+    /**
+     * Paints `text` in magenta.
+     *
+     * @param text The text to paint in magenta.
+     * @returns `this` object for chaining.
+     */
+    magenta(text: string): this;
+    /**
+     * Paints `text` in cyan.
+     *
+     * @param text The text to paint in cyan.
+     * @returns `this` object for chaining.
+     */
+    cyan(text: string): this;
+    /**
+     * Paints `text` in white.
+     *
+     * @param text The text to paint in white.
+     * @returns `this` object for chaining.
+     */
+    white(text: string): this;
+    /**
+     * Makes `text` **bold**.
+     *
+     * @param text The text to make **bold**.
+     * @returns `this` object for chaining.
+     */
+    bold(text: string): this;
+    /**
+     * Makes `text` blink.
+     *
+     * @param text The text to make blink.
+     * @returns `this` object for chaining.
+     */
+    blink(text: string): this;
+    /**
+     * Conceals `text`.
+     *
+     * @param text The text to conceal.
+     * @returns `this` object for chaining.
+     */
+    conceal(text: string): this;
+    /**
+     * Turns this object into the final string.
+     *
+     * @returns The string with all colors in this object.
+     */
+    toString(): string;
+    /**
+     * Resolves the object to the final string.
+     * @deprecated Use {@link Coloring.prototype.toString} instead.
+     */
     resolve(): string;
 }
-export { coloring, Coloring, type Color, type Effect, type Parameter, type ParameterArray };
-export default coloring;
+export { coloring, Coloring };
