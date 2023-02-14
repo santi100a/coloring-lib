@@ -1,7 +1,7 @@
 # Santi's Coloring Library (JavaScript)
-[![Build Status](https://github.com/santi100a/coloring-lib/actions/workflows/main.yml/badge.svg)](https://github.com/santi100a/santitools-python/actions)
-[![GitHub stars](https://img.shields.io/github/stars/santi100a/coloring-lib.svg)](https://github.com/santi100a/santitools-python)
-[![License](https://img.shields.io/github/license/santi100a/coloring-lib.svg)](https://github.com/santi100a/santitools-python)
+[![Build Status](https://github.com/santi100a/coloring-lib/actions/workflows/main.yml/badge.svg)](https://github.com/santi100a/coloring-lib/actions)
+[![GitHub stars](https://img.shields.io/github/stars/santi100a/coloring-lib.svg)](https://github.com/santi100a/coloring-lib)
+[![License](https://img.shields.io/github/license/santi100a/coloring-lib.svg)](https://github.com/santi100a/coloring-lib)
 
 This is a coloring library that uses ANSI sequences to color text on a terminal.
 Be aware there might be bugs hidden in this code. Pull requests and issues are welcome!
