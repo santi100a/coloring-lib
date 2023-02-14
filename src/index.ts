@@ -1,4 +1,4 @@
-import { assert, assertType } from '@santi100/assertion-lib';
+import { assert, assertType } from '@santi100/assertion-lib/cjs';
 const COLORS = {
   black: '\x1b[30m',
   red: '\x1b[31m',
@@ -36,13 +36,13 @@ type ParameterArray = Parameter[];
 function coloring(str: string, color: ParameterArray | Parameter): string {
   const isColorValid = Array.isArray(color) || color in COLORS;
   assertType(str, 'string');
-  assert(isColorValid);
+  assert(isColorValid, { expected: true, actual: isColorValid, operator: '||' });
   function generateFromArray(color: ParameterArray): string {
     let j = '';
     for (const item of color) {
       j += COLORS[item];
     }
-    j += `{str}\x1b[0m`;
+    j += `${str}\x1b[0m`;
     return j;
   }
   return typeof color === 'string'
@@ -50,9 +50,9 @@ function coloring(str: string, color: ParameterArray | Parameter): string {
     : generateFromArray(color);
 }
 /**
- * @class This is a coloring class.
+ * @class This is a colorizer class.
  */
-class Coloring {
+class Colorizer {
   private _colors: string = '';
   /**
    * Paints `text` in black.
@@ -174,7 +174,7 @@ class Coloring {
   }
   /**
    * Resolves the object to the final string.
-   * @deprecated Use {@link Coloring.prototype.toString} instead.
+   * @deprecated Use {@link Colorizer.prototype.toString} instead.
    */
   resolve() {
     console.warn(
@@ -183,5 +183,9 @@ class Coloring {
     return this.toString();
   }
 }
+/**
+ * @deprecated Use {@link Colorizer} instead.
+ */
+const Coloring = Colorizer;
 
-export { coloring, Coloring };
+export { coloring, Colorizer, Coloring };

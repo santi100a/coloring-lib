@@ -10,9 +10,9 @@ type ParameterArray = Parameter[];
  */
 declare function coloring(str: string, color: ParameterArray | Parameter): string;
 /**
- * @class This is a coloring class.
+ * @class This is a colorizer class.
  */
-declare class Coloring {
+declare class Colorizer {
     private _colors;
     /**
      * Paints `text` in black.
@@ -99,8 +99,12 @@ declare class Coloring {
     toString(): string;
     /**
      * Resolves the object to the final string.
-     * @deprecated Use {@link Coloring.prototype.toString} instead.
+     * @deprecated Use {@link Colorizer.prototype.toString} instead.
      */
     resolve(): string;
 }
-export { coloring, Coloring };
+/**
+ * @deprecated Use {@link Colorizer} instead.
+ */
+declare const Coloring: typeof Colorizer;
+export { coloring, Colorizer, Coloring };
