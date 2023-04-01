@@ -6,33 +6,22 @@
 This is a coloring library that uses ANSI sequences to color text on a terminal.
 Be aware there might be bugs hidden in this code. Pull requests and issues are welcome!
 
-## Usage
-
-### Importing from a JavaScript File
-
-#### Via NPM 
-Import ```@santi100/coloring-lib``` (for ESM) or ```@santi100/coloring-lib/cjs``` (for CJS).
-#### Via Source Control 
-
-Import ```./coloring-lib/index.js``` (ESM) or ```./coloring-lib/cjs/index.js``` (CJS).
-
-### Installation
-
-#### Via NPM
+## Installation
 
 - Run ```npm install @santi100/coloring-lib```, ```yarn add @santi100/coloring-lib```, or ```pnpm install @santi100/coloring-lib```, depending on what package manager you use in your project.
 
-#### Via Source Control
+## Usage
+Be aware this library uses a subdirectory called `cjs/` for the CommonJS version of the code. The `index.js` file is just an ESM wrapper for it. Keep in mind we ship our own TypeScript definitions. You can import
+`@santi100/coloring-lib` (for an ESM project), or `@santi100/coloring-lib/cjs` (for a CJS project or an ESM project that uses default imports).
+### Exported Members
 
-- Run ```git clone https://github.com/santi100a/coloring-lib```.
-- Enter the directory and run ```npm install```, ```yarn install```, or ```pnpm install``` to install dependencies.
+- ```coloring(string: string, color: Color): string;``` This function takes in a string to color, and one of 11 colors/effects: red, yellow, green, black, blue, magenta, cyan, white, bold, conceal and blink.
 
-### Functions
+- ```coloring(string: string, color: Color[]): string;``` This function takes in a string to color, and an array of the aforementioned colors/effects. If you put two or more colors, the latter one/s will override the former/s.
 
-```coloring(string: string, color: Color): string;``` This function takes in a string to color, and a color, which
-can be one of 11 colors/effects: red, yellow, green, black, blue, magenta, cyan, white, bold, conceal and blink.
+- ```class Colorizer```: This is a colorizer object class. Its instance methods are called the same as the
+colors/effects, and you can chain them. To convert the object to a string, call the ```Colorizer.prototype.toString()``` method.
 
-```coloring(string: string, color: Color[]): string;``` This function takes in a string to color, and an array of the aforementioned colors/effects. If you put two colors, the latter one/s will override the former/s.
-
-```class Coloring```: This is a colorizer object class. Its instance methods are called the same as the
-colors/effects, and you can chain them. To convert the object to a string, call the ```Coloring.prototype.resolve()``` method.
+```Colorizer.prototype.resolve()``` **is a deprecated alias for** `Colorizer.prototype.toString()`. Use ```Colorizer.prototype.toString()``` **instead.**
+**The** `Coloring` **class is a deprecated alias for the** `Colorizer` **class.** 
+**Use** `Colorizer` **instead.**

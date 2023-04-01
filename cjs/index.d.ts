@@ -1,19 +1,34 @@
-type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'bold' | 'blink' | 'conceal';
-type Effect = 'bold' | 'blink' | 'conceal';
-type Parameter = Color | Effect;
-type ParameterArray = Parameter[];
+declare type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'bold' | 'blink' | 'conceal';
+declare type Effect = 'bold' | 'blink' | 'conceal';
+declare type ColorOrEffect = Color | Effect;
+declare type ArrayOfColorsOrEffects = ColorOrEffect[];
 /**
- * Color `string` with color(s) `color`.
+ * Color `str` with color `color`.
  *
- * @param string The string to paint in color!
- * @param color The colors to paint the string in.
+ * @param str The string to paint in color!
+ * @param color The color to paint the string in.
  */
-declare function coloring(str: string, color: ParameterArray | Parameter): string;
+export declare function coloring(str: string, color: ColorOrEffect): string;
+/**
+ * Color `str` with colors `colors`.
+ *
+ * @param str The string to paint in color!
+ * @param colors The colors to paint the string in.
+ */
+export declare function coloring(str: string, colors: ArrayOfColorsOrEffects): string;
+/**
+ * Colors `text` in a rainbow pattern.
+ *
+ * @param str The string to paint in color!
+ * @returns The colored string.
+ */
+export declare function rainbowify(str: string): string;
 /**
  * @class This is a colorizer class.
  */
-declare class Colorizer {
-    private _colors;
+export declare class Colorizer {
+    private __string;
+    constructor();
     /**
      * Paints `text` in black.
      *
@@ -104,7 +119,7 @@ declare class Colorizer {
     resolve(): string;
 }
 /**
- * @deprecated Use {@link Colorizer} instead.
+ * @deprecated This is a deprecated alias for the `Colorizer` class. Use {@link Colorizer} instead.
  */
-declare const Coloring: typeof Colorizer;
-export { coloring, Colorizer, Coloring };
+export declare const Coloring: typeof Colorizer;
+export type { ArrayOfColorsOrEffects, ColorOrEffect, Color, Effect };
