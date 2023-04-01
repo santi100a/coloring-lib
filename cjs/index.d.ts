@@ -1,6 +1,18 @@
+/**
+ * A color to paint a string in.
+ */
 declare type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'bold' | 'blink' | 'conceal';
+/**
+ * An effect you can give to a string.
+ */
 declare type Effect = 'bold' | 'blink' | 'conceal';
+/**
+ * A valid color or effect.
+ */
 declare type ColorOrEffect = Color | Effect;
+/**
+ * An array of valid colors or effects.
+ */
 declare type ArrayOfColorsOrEffects = ColorOrEffect[];
 /**
  * Color `str` with color `color`.

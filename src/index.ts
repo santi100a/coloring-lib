@@ -12,6 +12,9 @@ const COLORS = {
 	blink: '\x1b[5m',
 	conceal: '\x1b[8m'
 };
+/**
+ * A color to paint a string in.
+ */
 type Color =
 	| 'black'
 	| 'red'
@@ -24,8 +27,17 @@ type Color =
 	| 'bold'
 	| 'blink'
 	| 'conceal';
+/**
+ * An effect you can give to a string.
+ */
 type Effect = 'bold' | 'blink' | 'conceal';
+/**
+ * A valid color or effect.
+ */
 type ColorOrEffect = Color | Effect;
+/**
+ * An array of valid colors or effects.
+ */
 type ArrayOfColorsOrEffects = ColorOrEffect[];
 function __keys(o: Record<any, any>) {
 	if (Object?.keys) return Object.keys(o);
