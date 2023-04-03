@@ -561,9 +561,9 @@
     "@jridgewell/sourcemap-codec" "1.4.14"
 
 "@santi100/assertion-lib@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@santi100/assertion-lib/-/assertion-lib-1.0.6.tgz#ead156f98a2265100dd6529a3d393b3ed54b8561"
-  integrity sha512-z6MOEeIXTp+SJsBrWO0ezUFaPuYeblyZC1CDohADKm1/LkNsUOStumirCGbFKGQAD8Z3Br6rRkhqGFKHzSOWeQ==
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@santi100/assertion-lib/-/assertion-lib-1.0.7.tgz#ab111fff3a890777bd36f2476fae8a9de121b234"
+  integrity sha512-9JNSPj7saYlZIl9bOn14WEsbLr9UyGuH1+sGFOHtP2JcF0yAVXWvg5rBjK7lT7p2NIq+AivT9PBhPB174lDa7w==
   dependencies:
     "@santi100/equal-lib" "^1.0.8"
 
