@@ -1,12 +1,14 @@
 {
-    "include": ["src/*.ts"],
-    "exclude": [],
     "compilerOptions": {
-        "declaration": true,
-        "target": "ES3",
         "strict": true,
-        "module": "commonjs",
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
         "outDir": "cjs/",
-        "noImplicitAny": true
-    }
+        "declaration": true,
+        "target": "es3",
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["node_modules"]
 }

@@ -1,5 +1,6 @@
-# Santi's Coloring Library 
-[![Build Status](https://github.com/santi100a/coloring-lib/actions/workflows/test.yml/badge.svg)](https://github.com/santi100a/coloring-lib/actions)
+# Santi's Coloring Library
+
+[![Build Status](https://github.com/santi100a/coloring-lib/actions/workflows/ci.yml/badge.svg)](https://github.com/santi100a/coloring-lib/actions)
 [![npm homepage](https://img.shields.io/npm/v/@santi100/coloring-lib)](https://npmjs.org/package/@santi100/coloring-lib)
 [![GitHub stars](https://img.shields.io/github/stars/santi100a/coloring-lib.svg)](https://github.com/santi100a/coloring-lib)
 [![License](https://img.shields.io/github/license/santi100a/coloring-lib.svg)](https://github.com/santi100a/coloring-lib)
@@ -14,6 +15,7 @@
 *^The source code is about 2 kilobytes.*
 
 ## What's this?
+
 This is a coloring library that uses ANSI sequences to color text on a terminal.
 Be aware there might be bugs hidden in this code. Pull requests and issues are welcome!
 
@@ -21,22 +23,24 @@ Be aware there might be bugs hidden in this code. Pull requests and issues are w
 
 Wanna contribute? [File an issue](https://github.com/santi100a/coloring-lib/issues) or [pull request](https://github.com/santi100a/coloring-lib/pulls)!
 Make sure you follow the [contribution Code of Conduct](https://github.com/santi100a/coloring-lib/blob/main/CODE_OF_CONDUCT.md).
+
 ## Installation
+
 - Via NPM: `npm install @santi100/coloring-lib`
 - Via Yarn: `yarn add @santi100/coloring-lib`
 - Via PNPM: `pnpm install @santi100/coloring-lib`
 
 ## API
 
-
 ### Functions
+
 - `coloring(str: string, color: ColorOrEffect): string;`
 Color  `str` with color  `color`.
 
   | Parameter | Type            | Description                         |
   |-----------|-----------------|-------------------------------------|
   | str       | `string`        | The string to paint in color.       |
-  | color     | `ColorOrEffect` | The color to paint the string in.   | 
+  | color     | `ColorOrEffect` | The color to paint the string in.   |
 
   Returns a string of the colored text.
 
@@ -45,31 +49,34 @@ Color  `str` with color  `color`.
 
   | Parameter | Type                     | Description                                   |
   |-----------|--------------------------|-----------------------------------------------|
-  | `str`     |	`string`                 | The string to paint in color.                 |
+  | `str`     | `string`                 | The string to paint in color.                 |
   | `colors`  | `ArrayOfColorsOrEffects` | The colors to paint the string in.            |
- 
+
   Returns a string of the colored text.
 
 - `rainbowify(str: string): string;`
   Colors `str` in a rainbow pattern.
 
-  | Parameter | Type	                | Description                                  |
+  | Parameter | Type                    | Description                                  |
   |-----------|-------------------------|----------------------------------------------|
-  | `str`     | `string`                | The string to paint in color.	
-
+  | `str`     | `string`                | The string to paint in color.                |
+  
   Returns a string of the rainbow colored text.
 
 ### Classes
-- `class Colorizer`: This is a colorizer object class. 
-  Its instance methods are called the same as the colors/effects, and you can chain them. 
+
+- `class Colorizer`: This is a colorizer object class.
+  Its instance methods are called the same as the colors/effects, and you can chain them.
   To convert the object to a string, call the `Colorizer.prototype.toString()` method.
 
-  `Colorizer.prototype.resolve()` **is a deprecated alias for** `Colorizer.prototype.toString()`. 
+  `Colorizer.prototype.resolve()` **is a deprecated alias for** `Colorizer.prototype.toString()`.
   **Use** `Colorizer.prototype.toString()` **instead.**
 
-  **The** `Coloring` **class is a deprecated alias for the** `Colorizer` **class.** 
+  **The** `Coloring` **class is a deprecated alias for the** `Colorizer` **class.**
   **Use** `Colorizer` **instead.**
+
 ## Types
+
 - `type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'bold' | 'blink' | 'conceal';`
 A color to paint a string in.
 - `type Effect = 'bold' | 'blink' | 'conceal';`

@@ -10,7 +10,7 @@ const COLORS = {
 	white: '\x1b[37m',
 	bold: '\x1b[1m',
 	blink: '\x1b[5m',
-	conceal: '\x1b[8m'
+	conceal: '\x1b[8m',
 };
 /**
  * A color to paint a string in.
@@ -39,7 +39,7 @@ type ColorOrEffect = Color | Effect;
  * An array of valid colors or effects.
  */
 type ArrayOfColorsOrEffects = ColorOrEffect[];
-function __keys(o: Record<any, any>) {
+function __keys(o: Record<PropertyKey, unknown>) {
 	if (Object?.keys) return Object.keys(o);
 	else {
 		const keys = [];
@@ -103,7 +103,7 @@ export function rainbowify(str: string) {
 		COLORS.green,
 		COLORS.cyan,
 		COLORS.blue,
-		COLORS.magenta
+		COLORS.magenta,
 	]; // red, orange, yellow, green, blue, magenta
 	const letters = ''.concat(str).split('');
 
@@ -123,10 +123,10 @@ export function rainbowify(str: string) {
  * @class This is a colorizer class.
  */
 export class Colorizer {
-	private __string: string = '';
+	private __string = '';
 	constructor() {
 		Object?.defineProperty?.(this, '__string' as keyof Colorizer, {
-			enumerable: false
+			enumerable: false,
 		});
 	}
 	/**
@@ -253,8 +253,8 @@ export class Colorizer {
 	 */
 	resolve() {
 		(
-			(typeof console === 'undefined' ? () => {} : console.warn) ||
-			(typeof console === 'undefined' ? () => {} : console.log)
+			(typeof console === 'undefined' ? () => void 0 : console.warn) ||
+			(typeof console === 'undefined' ? () => void 0 : console.log)
 		)(
 			'Coloring.prototype.resolve() is deprecated. Use Coloring.prototype.toString() instead.'
 		);
