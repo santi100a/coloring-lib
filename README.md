@@ -34,6 +34,7 @@ Make sure you follow the [contribution Code of Conduct](https://github.com/santi
 **Use** `colorize` **instead.**
 
 - `colorize(str: string, color: ColorOrEffect): string;` **NEW!**
+
 Color  `str` with color  `color`.
 
   | Parameter | Type            | Description                         |
@@ -44,6 +45,7 @@ Color  `str` with color  `color`.
   Returns a string of the colored text.
 
 - `colorize(str: string, colors: ArrayOfColorsOrEffects): string;` **NEW!**
+
   Color `str` with colors `colors`.
 
   | Parameter | Type                     | Description                                   |
@@ -54,6 +56,7 @@ Color  `str` with color  `color`.
   Returns a string of the colored text.
 
 - `rainbowify(str: string): string;` **NEW!**
+
   Colors `str` in a rainbow pattern.
 
   | Parameter | Type                    | Description                                  |
@@ -63,6 +66,7 @@ Color  `str` with color  `color`.
   Returns a string of the rainbow colored text.
 
 - `function colorizeTemplate(template: string): string;` **NEW!**
+
   Fills `template`, given that it is a template like this:
 
   ```colortemp
@@ -77,7 +81,9 @@ Color  `str` with color  `color`.
 
 ### Classes
 
-- `class Colorizer`: This is a colorizer object class.
+- `class Colorizer`:
+
+  This is a colorizer object class.
   Its instance methods are called the same as the colors/effects, and you can chain them.
   To convert the object to a string, call the `Colorizer.prototype.toString()` method.
 
