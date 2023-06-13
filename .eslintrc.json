@@ -21,5 +21,6 @@
         "eslint-plugin-jest"
     ],
     "rules": {
+        "@typescript-eslint/no-var-requires": "off"
     }
 }

@@ -6,13 +6,9 @@
 [![License](https://img.shields.io/github/license/santi100a/coloring-lib.svg)](https://github.com/santi100a/coloring-lib)
 [![Bundlephobia stats](https://img.shields.io/bundlephobia/min/@santi100/coloring-lib)](https://bundlephobia.com/package/@santi100/coloring-lib@latest)
 
-- 🚀 Lightweight and fast^
-- 👴 ES3-compliant*
+- 🚀 Lightweight and fast[^](#disclaimers)
+- 👴 ES3-compliant[*](#disclaimers)
 - 💻 Portable between the browser and Node.js
-
-**Hasn't been tested in an actual ES3 environment. Feel free to open an issue or pull request if you find any non-ES3 thing. See "Contribute" for instructions on how to do so.*
-
-*^The source code is about 2 kilobytes.*
 
 ## What's this?
 
@@ -34,7 +30,10 @@ Make sure you follow the [contribution Code of Conduct](https://github.com/santi
 
 ### Functions
 
-- `coloring(str: string, color: ColorOrEffect): string;`
+**The** `coloring` **function is a deprecated alias for the** `colorize` **function.**
+**Use** `colorize` **instead.**
+
+- `colorize(str: string, color: ColorOrEffect): string;` **NEW!**
 Color  `str` with color  `color`.
 
   | Parameter | Type            | Description                         |
@@ -44,7 +43,7 @@ Color  `str` with color  `color`.
 
   Returns a string of the colored text.
 
-- `coloring(str: string, colors: ArrayOfColorsOrEffects): string;`
+- `colorize(str: string, colors: ArrayOfColorsOrEffects): string;` **NEW!**
   Color `str` with colors `colors`.
 
   | Parameter | Type                     | Description                                   |
@@ -54,7 +53,7 @@ Color  `str` with color  `color`.
 
   Returns a string of the colored text.
 
-- `rainbowify(str: string): string;`
+- `rainbowify(str: string): string;` **NEW!**
   Colors `str` in a rainbow pattern.
 
   | Parameter | Type                    | Description                                  |
@@ -62,6 +61,19 @@ Color  `str` with color  `color`.
   | `str`     | `string`                | The string to paint in color.                |
   
   Returns a string of the rainbow colored text.
+
+- `function colorizeTemplate(template: string): string;` **NEW!**
+  Fills `template`, given that it is a template like this:
+
+  ```colortemp
+  text %color,effect(more text) and more text
+  ```
+
+  |   Parameter    | Type                    | Description                                  |
+  |----------------|-------------------------|----------------------------------------------|
+  | `template`     | `string`                | The template string to fill.                |
+
+  Returns the template string with all placeholders replaced with the correct colors or effects.
 
 ### Classes
 
@@ -75,13 +87,20 @@ Color  `str` with color  `color`.
   **The** `Coloring` **class is a deprecated alias for the** `Colorizer` **class.**
   **Use** `Colorizer` **instead.**
 
-## Types
+### Types
 
-- `type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white' | 'bold' | 'blink' | 'conceal';`
-A color to paint a string in.
-- `type Effect = 'bold' | 'blink' | 'conceal';`
-An effect you can give to a string.
+- `type Color = 'black' | 'red' | 'green' | 'yellow' | 'blue' | 'magenta' | 'cyan' | 'white';`
+  A color to paint a string in.
+- `type Effect = 'bold' | 'blink' | 'conceal' | 'italic' | 'underline';`
+  An effect you can give to a string.
+  **NEW!** Italic and underline were introduced in version 1.1.2.
 - `type ColorOrEffect = Color | Effect;`
-A valid color or effect.
+  A valid color or effect.
 - `type ArrayOfColorsOrEffects = ColorOrEffect[];`
-An array of valid colors or effects.
+  An array of valid colors or effects.
+
+## Disclaimers
+
+**Hasn't been tested in an actual ES3 environment. Feel free to open an issue or pull request if you find any non-ES3 thing. See "Contribute" for instructions on how to do so.*
+
+*^The source code is about 2 kilobytes.*

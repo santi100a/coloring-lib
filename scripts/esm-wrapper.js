@@ -9,7 +9,7 @@ const cjsExports = Object.keys(cjsModule);
 
 const esmModuleContent = `import cjsModule from './cjs/index.js';
 /*eslint no-empty-pattern: "warn"*/
-export const { ${cjsExports.filter(i => i !== 'default').join(', ')} } = cjsModule;
+export const { ${cjsExports.filter(i => i !== 'default' && i !== '__esModule').join(', ')} } = cjsModule;
 ${ cjsExports.includes('default') ? "export default cjsModule['default'];" : '' }
 `;
 console.log('📦 Writing wrapper...')
