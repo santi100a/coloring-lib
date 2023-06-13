@@ -4,7 +4,7 @@ export const EFFECTS = {
 	underline: '\x1b[4m',
 	blink: '\x1b[5m',
 	conceal: '\x1b[8m',
-};
+}; 
 
 export const COLORS = {
 	black: '\x1b[30m',

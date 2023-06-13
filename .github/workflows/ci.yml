@@ -9,6 +9,8 @@ on:
 
 jobs:
   test:
+    outputs:
+      IS_RELEASE_COMMIT: ${{ steps.commit.outputs.IS_RELEASE_COMMIT }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
