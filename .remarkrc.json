@@ -1,6 +1,5 @@
 {
     "plugins": [
-        "gfm",
         "validate-links"
     ]
 }
