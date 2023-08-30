@@ -8,7 +8,7 @@ describe('rainbowify', () => {
             .toBe('\x1B[31mh\x1B[0m\x1B[33me\x1B[0m\x1B[32ml\x1B[0m\x1B[36ml\x1B[0m\x1B[34mo\x1B[0m\x1B[35m \x1B[0m\x1B[31mw\x1B[0m\x1B[33mo\x1B[0m\x1B[32mr\x1B[0m\x1B[36ml\x1B[0m\x1B[34md\x1B[0m')
     });
     test('code shart is equivalent to rainbowify', () => {
-		expect(require('../rainbowify').rainbowify).toBe(rainbowify);
+		expect(require('../cjs/rainbowify').rainbowify).toBe(rainbowify);
 	})
     describe('error handling', () => {
         test('rainbowify throws an error if there are too little arguments', () => {

@@ -50,7 +50,7 @@ describe('coloring-lib tests', () => {
 		});
 	});
 	test('code shart is equivalent to Colorizer', () => {
-		expect(require('../colorizer').Colorizer).toBe(Colorizer);
+		expect(require('../cjs/colorizer').Colorizer).toBe(Colorizer);
 	});
 	test('the colorizer includes all keys from COLORS_AND_EFFECTS', () => {
 		const colorsAndEffects = Object.keys(COLORS_AND_EFFECTS);

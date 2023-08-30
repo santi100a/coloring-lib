@@ -10,7 +10,6 @@ on:
         type: string
 jobs:
   report-pr-build-failed:
-    continue-on-error: true
     permissions:
       pull-requests: write
     runs-on: ubuntu-latest

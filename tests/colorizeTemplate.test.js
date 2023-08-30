@@ -39,7 +39,7 @@ describe('colorizeTemplate', () => {
       }).toThrow(Error);
     });
     test('code shart is equivalent to Colorizer', () => {
-		expect(require('../colorize-template').colorizeTemplate).toBe(colorizeTemplate);
+		expect(require('../cjs/colorize-template').colorizeTemplate).toBe(colorizeTemplate);
 	})
   });
   
