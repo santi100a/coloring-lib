@@ -17,7 +17,7 @@
   "module": "./index.mjs",
   "license": "MIT",
   "dependencies": {
-    "@santi100/assertion-lib": "^1.0.6",
+    "@santi100/assertion-lib": "^2.0.2",
     "remark-validate-links": "^12.1.1"
   },
   "devDependencies": {
